@@ -3,7 +3,6 @@ import time
 import pytz
 
 from datetime import datetime
-from icecream import ic
 from shapely.geometry import LineString
 
 
@@ -14,8 +13,6 @@ def read_json(file_path):
     except Exception as e:
         print(f"Error reading JSON file: {e}")
         return None
-    # with open("test.json", "r") as file:
-    #     JSON_FILE = json.load(file)
 
 
 def determination_of_coordinates(JSON_FILE):
@@ -170,11 +167,8 @@ def main():
         print(f"Человек вошло: {entry_count}")
         print(f"Человек вышло: {exit_count}")
         print(f"Людей в магазине: {visitors_in_shop}")
-        ic(incoming_visitors)
-        ic(customers)
-
         end_time = time.time()
-        print(round(end_time - start_time, 3), "sec")
+        print("Работа кода составила", round(end_time - start_time, 3), "sec")
 
 
 if __name__ == '__main__':
